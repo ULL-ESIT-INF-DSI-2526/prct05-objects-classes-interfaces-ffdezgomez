@@ -1,0 +1,1 @@
+[![CI test](https://github.com/ULL-ESIT-INF-DSI-2526/prct05-objects-classes-interfaces-ffdezgomez/actions/workflows/ci.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2526/prct05-objects-classes-interfaces-ffdezgomez/actions/workflows/ci.yml)
