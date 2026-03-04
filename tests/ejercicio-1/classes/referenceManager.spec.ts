@@ -73,6 +73,7 @@ describe("ReferenceManager class test", () => {
     expect(referenceManager.searchByAuthor("author3")).toEqual([items[2]])
     expect(referenceManager.searchByAuthor("author4")).toEqual([items[3]])
     expect(referenceManager.searchByAuthor("author5")).toEqual([items[4]])
+    expect(referenceManager.searchByAuthor("author")).toEqual(items)
   })
   
   test("ReferenceManager searchByPublisher test", () => {

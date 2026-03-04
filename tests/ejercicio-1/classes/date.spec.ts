@@ -25,4 +25,11 @@ describe("MyDate function test", () => {
     expect(() => new MyDate(29, 2, 2019)).toThrow('Febraury have less than 29 days')
   })
 
+  test("MyDate constructor supports year-month-day argument order", () => {
+    const date = new MyDate(2020, 1, 1)
+    expect(date.day).toBe(1)
+    expect(date.month).toBe(1)
+    expect(date.year).toBe(2020)
+  })
+
 })
