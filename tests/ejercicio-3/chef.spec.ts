@@ -13,7 +13,7 @@ const pasos2: Paso[] = [{name: 'Lechecondensada', segundos: 10, opcional: false,
 const receta1: Receta = {name: 'LecheGalleta1', year: 2026, pasos: pasos1} 
 const receta2: Receta = {name: 'LecheGalleta2', year: 2023, pasos: pasos2} 
 
-let recetario1: Receta[] = [receta1, receta2]
+const recetario1: Receta[] = [receta1, receta2]
 
 describe('Chef class test', () => {
   test('Chef initialize', () => {

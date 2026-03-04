@@ -2,13 +2,28 @@ import { Chef } from './chef'
 import { Receta } from '../../src/ejercicio-3/receta'
 import { Paso } from '../../src/ejercicio-3/paso' 
 
+/**
+ * System class that manages chefs and their recipes. It allows adding chefs, printing chefs and recipes, and searching for chefs, recipes, and steps by name.
+ */
 export class System {
   #chefs: Chef[]
   
+  /**
+   *  Initializes the System with an array of chefs.
+   * @param chefs - An array of Chef objects to initialize the system with.
+   */
   constructor(chefs: Chef[]) { this.#chefs = chefs }
 
+  /**
+   *  Adds a new chef to the system.
+   * @param chef - A Chef object to be added to the system.
+   */
   public add(chef: Chef) { this.#chefs.push(chef) }
 
+  /**
+   *  Prints the chefs in the system. If an array of chefs is provided as an argument, it prints that array instead. The output includes the chef's name, followers, and a summary of their recipes.
+   * @param chefs - An optional array of Chef objects to be printed. If not provided, it defaults to printing all chefs in the system.
+   */
   public printChefs(chefs: Chef[] = this.#chefs): void {
     console.table(
       chefs.map((chef) => ({
@@ -21,6 +36,10 @@ export class System {
     );
   }
 
+  /**
+   * Prints the recipes in the system. It takes an array of Receta objects as an argument and prints their details, including the name, year, and a summary of the steps involved in each recipe.
+   * @param recetas - An array of Receta objects to be printed. Each recipe's details include the name, year, and a summary of its steps (name, duration in seconds, and whether the step is optional).
+   */
   public printRecipes(recetas: Receta[]): void {
     console.table(
       recetas.map((receta) => ({
@@ -33,10 +52,20 @@ export class System {
     )
   }
 
+  /**
+   *  Searches for chefs in the system whose names include the provided string. It returns an array of Chef objects that match the search criteria.
+   * @param name - A string to search for in the names of the chefs. The search is case-sensitive and checks if the chef's name includes the provided string.
+   * @returns 
+   */
   public searchChef(name: string): Chef[] {
     return this.#chefs.filter(chef => chef.name.includes(name))
   }
 
+  /**
+   *  Searches for recipes in the system whose names include the provided string. It returns an array of Receta objects that match the search criteria.
+   * @param name - A string to search for in the names of the recipes. The search is case-sensitive and checks if the recipe's name includes the provided string.
+   * @returns 
+   */
   public searchReceta(name: string): Receta[] {
     let result: Receta[] = []
 
@@ -48,6 +77,11 @@ export class System {
     return result
   }
 
+  /**
+   * Searches for recipes in the system that contain a step with a name that includes the provided string. It returns an array of Receta objects that match the search criteria.
+   * @param name - A string to search for in the names of the steps within the recipes. The search is case-sensitive and checks if any step's name includes the provided string.
+   * @returns 
+   */
   public searchStep(name: string): Receta[] {
     let result: Receta[] = []
 
