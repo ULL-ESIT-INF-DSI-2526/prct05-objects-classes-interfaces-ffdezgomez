@@ -38,7 +38,7 @@ export class ReferenceManager {
    */
   searchByAuthor(author: string): BibliographicItem[] {
     return this.#items.filter((value) => {
-      return value.authors.some(word => word.toLowerCase() === author.toLocaleLowerCase())
+      return value.authors.some(word => word.toLowerCase().includes(author.toLocaleLowerCase()))
     })
   }
 

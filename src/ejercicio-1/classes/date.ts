@@ -14,6 +14,12 @@ export class MyDate implements DateI {
   #year: number
 
   constructor(day: number, month: number, year: number) {
+    if (day > 31 && year <= 31) {
+      const realYear = day
+      day = year
+      year = realYear
+    }
+
     if (month < 1 || month > 12) throw new Error('Months cannot be less than 1 or greater than 12')
 
     if (day < 1) throw new Error('Incorrect day')
